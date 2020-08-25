@@ -1,15 +1,12 @@
 from django import forms
-from .models import Notes
+from .models import Note
 
 
-class NotesForm(forms.ModelForm):
+class NoteForm(forms.ModelForm):
 
     class Meta:
-        model = Notes
+        model = Note
         fields = [
             'title',
             'body',
         ]
-
-
-)

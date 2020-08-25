@@ -6,7 +6,7 @@ from .models import Notes
 
 def list_notes(request):
     notes = Notes.objects.all()
-    return render(request, 'templates/list_notes.html', {'notes': notes})
+    return render(request, 'list_notes.html', {'notes': notes})
 
 
 def notes_detail(request):

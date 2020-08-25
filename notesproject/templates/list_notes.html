@@ -4,7 +4,8 @@
 <h1>All Notes</h1>
 {% for note in notes %}
 <div>
-    {{ note }}
+    {{ note.title }}<br>
+    {{ note.body }}<br>
 </div>
 {% endfor %}
 {% endblock %}

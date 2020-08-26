@@ -26,8 +26,20 @@ def add_note(request):
     return render(request, 'add_note.html', {'form': form})
 
 
+# # def edit_note(request, pk):
+#     note = Note.objects.get(pk=pk)
+#     if request.method == "GET":
+#         form = NoteForm(instance=note)
+#     else:
+#         form = NoteForm(data=request.POST, instance=note)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('list_notes')
+#     return render(request, 'edit_note.html', {'note': note})
+
+
 def edit_note(request, pk):
-    note = Note.objects.get(pk=pk)
+    note = get_object_or_404(Note, pk=pk)
     if request.method == "GET":
         form = NoteForm(instance=note)
     else:
@@ -35,4 +47,7 @@ def edit_note(request, pk):
         if form.is_valid():
             form.save()
             return redirect('list_notes')
-    return render(request, 'edit_note.html', {'note': note})
+    return render(request, 'edit_note.html', {
+        'form': form,
+        'note': note
+    })

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Write a new note!</h1>
+<div>
+    <form action="{% url 'add_note' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button type="submit">Create Note</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

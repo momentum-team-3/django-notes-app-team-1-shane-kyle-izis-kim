@@ -3,6 +3,7 @@
 
 {% block content %}
 <h1>All Notes</h1>
+<a href="{% url 'add_note' %}">Create Note</a>
 {% for note in notes %}
 <div>
     <div>

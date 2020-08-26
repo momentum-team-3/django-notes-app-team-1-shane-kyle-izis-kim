@@ -10,6 +10,9 @@ autopep8 = "*"
 django = "*"
 django-debug-toolbar = "*"
 markdown = "*"
+django-debug = "*"
+django-extensions = "*"
+colorama = "*"
 
 [requires]
 python_version = "3.8"

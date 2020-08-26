@@ -7,5 +7,7 @@
     {{ note.title }}<br>
     {{ note.body }}<br>
 </div>
+
+<br><a href="{%url 'notes_detail' pk=note.pk %}">Show Note</a><br>
 {% endfor %}
 {% endblock %}

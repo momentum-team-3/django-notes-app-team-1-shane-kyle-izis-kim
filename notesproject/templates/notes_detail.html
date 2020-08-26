@@ -3,8 +3,9 @@
 
 {% block content %}
 <div>
-    <h1><strong>{{ note.title }}</strong></h1><br>
-    <div>{{ note.body | markdown | safe }}</div>
-    <div>{{ note.date_time }}</div><br>
+    <h1><strong>{{ note.title }}</strong></h1>
+    <p>{{ note.body | markdown | safe }}</p><br>
+    <p>{{ note.date_time }}</p>
+    <p><a href="{% url 'list_notes'%}">List all Notes</a></p>
 </div>
 {% endblock %}

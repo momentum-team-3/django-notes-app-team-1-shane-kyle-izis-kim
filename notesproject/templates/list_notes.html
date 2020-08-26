@@ -7,11 +7,11 @@
 <div>
     <div>
         <h3><strong>{{ note.title }}</strong></h3>
-    </div><br>
-    <div>{{ note.body | markdown | safe }}</div>
-    <div>{{ note.date_time }}</div><br>
+    </div>
+    <p>{{ note.body | markdown | safe }}</p><br>
+    <p>{{ note.date_time }}</p>
 </div>
 
-<a href="{%url 'notes_detail' pk=note.pk %}">Show Note</a><br><br><br>
+<p><a href="{%url 'notes_detail' pk=note.pk %}">Show Note</a></p><br><br>
 {% endfor %}
 {% endblock %}

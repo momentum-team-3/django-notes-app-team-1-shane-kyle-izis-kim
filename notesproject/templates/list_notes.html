@@ -1,13 +1,13 @@
 {% extends "base.html" %}
-
+{% load markdown_extras %}
 {% block content %}
 <h1>All Notes</h1>
 {% for note in notes %}
 <div>
     {{ note.title }}<br>
-    {{ note.body }}<br>
+    {{ note.body | markdown | safe }}<br>
 </div>
 
-<br><a href="{%url 'notes_detail' pk=note.pk %}">Show Note</a><br>
+<a href="{%url 'notes_detail' pk=note.pk %}">Show Note</a><br><br><br>
 {% endfor %}
 {% endblock %}

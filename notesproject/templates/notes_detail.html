@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-
+{% load markdown_extras %}
 {% block content %}
 <div>
     <h1><strong>{{ note.title }}</strong></h1><br>
-    <div>{{ note.body }}</div><br>
+    <div>{{ note.body | markdown | safe }}</div><br>
 </div>
 {% endblock %}

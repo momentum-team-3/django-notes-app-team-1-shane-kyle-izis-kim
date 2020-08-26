@@ -7,12 +7,21 @@
     <title>Notes App</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="notes/style.css" rel="stylesheet">
+    <link href="{% static style.css %}" rel="stylesheet">
 </head>
 
 <body>
-    {% block content %}
+    {%block navbar%}
+    <header>
+        <h1>Notes</h1>
+        <nav>
+            <a href="{% url 'list_notes' %}">Home</a>
+            <a href="{% url 'add_note' %}">Create Note</a>
+        </nav>
+    </header>
     {% endblock %}
+        {% block content %}
+        {% endblock %}
 </body>
 
 </html>

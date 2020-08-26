@@ -6,6 +6,9 @@
     <h1><strong>{{ note.title }}</strong></h1>
     <p>{{ note.body | markdown | safe }}</p><br>
     <p>{{ note.date_time }}</p>
-    <p><a href="{% url 'list_notes'%}">List all Notes</a></p>
+    <p>
+        <a href="{% url 'edit_note' pk=note.pk %}">Edit Note</a>
+        <a href="{% url 'list_notes'%}">List all Notes</a>
+    </p>
 </div>
 {% endblock %}

@@ -2,8 +2,7 @@
 {% load markdown_extras %}
 
 {% block content %}
-<h1>All Notes</h1>
-<a href="{% url 'add_note' %}">Create Note</a>
+<h2>All Notes</h2>
 {% for note in notes %}
 <div>
     <div>
@@ -13,6 +12,10 @@
     <p>{{ note.date_time }}</p>
 </div>
 
-<p><a href="{%url 'notes_detail' pk=note.pk %}">Show Note</a></p><br><br>
+<p>
+    <a href="{%url 'notes_detail' pk=note.pk %}">Show Note</a>
+    <a href="{% url 'edit_note' pk=note.pk %}">Edit Note</a>
+</p><br><br>
+
 {% endfor %}
 {% endblock %}

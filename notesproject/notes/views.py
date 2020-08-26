@@ -10,4 +10,5 @@ def list_notes(request):
 
 
 def notes_detail(request):
-    pass
+    note = Note.object.get(pk=pk)
+    return render(request, 'notes_detail.html',{'note': note})

@@ -8,6 +8,8 @@ notes/migrations/*
 
 #VScode
 *.vscode
+.dist/
+.DS_Store/
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

@@ -51,3 +51,10 @@ def edit_note(request, pk):
         'form': form,
         'note': note
     })
+
+def delete_note(request, pk):
+    note = get_object_or_404(Note, pk=pk)
+    if request.method == "POST":
+        note.delete()
+        return redirect(to='list_notes')
+    return render(request, "delete_note.html", {"note": note})

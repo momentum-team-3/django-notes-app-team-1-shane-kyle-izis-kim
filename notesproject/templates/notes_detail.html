@@ -9,6 +9,7 @@
     <p>
         <a href="{% url 'edit_note' pk=note.pk %}">Edit Note</a>
         <a href="{% url 'list_notes'%}">List all Notes</a>
+        <a href="{% url 'delete_note' pk=note.pk %}">Delete Note</a>
     </p>
 </div>
 {% endblock %}
